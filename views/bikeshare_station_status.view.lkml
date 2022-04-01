@@ -63,6 +63,7 @@ view: bikeshare_station_status {
   dimension: station_id {
     type: number
     description: "Unique identifier of a station"
+    primary_key: yes
     sql: ${TABLE}.station_id ;;
   }
 

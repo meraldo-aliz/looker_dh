@@ -11,6 +11,7 @@ view: bikeshare_regions {
   dimension: region_id {
     type: number
     description: "Unique identifier for the region"
+    primary_key: yes
     sql: ${TABLE}.region_id ;;
   }
 

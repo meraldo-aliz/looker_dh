@@ -127,6 +127,7 @@ view: bikeshare_trips {
   dimension: trip_id {
     type: string
     description: "Numeric ID of bike trip"
+    primary_key: yes
     sql: ${TABLE}.trip_id ;;
   }
 
