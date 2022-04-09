@@ -4,7 +4,7 @@ view: bikeshare_trips {
 
   dimension: bike_number {
     type: number
-    description: "ID of bike used"
+    description: "IDs of bike used"
     sql: ${TABLE}.bike_number ;;
   }
 
