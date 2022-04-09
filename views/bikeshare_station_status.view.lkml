@@ -9,7 +9,7 @@ view: bikeshare_station_status {
 
   dimension: is_installed {
     type: yesno
-    description: "1/0 boolean - is the station currently on the street"
+    description: "1/0 boolean - is the station currently on the street?"
     sql: ${TABLE}.is_installed ;;
   }
 
