@@ -4,7 +4,7 @@ view: bikeshare_regions {
 
   dimension: name {
     type: string
-    description: "Public name for this region"
+    description: "Public name for the region"
     sql: ${TABLE}.name ;;
     drill_fields: [bikeshare_station_info.name]
   }
