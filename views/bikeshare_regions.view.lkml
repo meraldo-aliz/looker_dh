@@ -6,6 +6,7 @@ view: bikeshare_regions {
     type: string
     description: "Public name for this region"
     sql: ${TABLE}.name ;;
+    drill_fields: [bikeshare_station_info.name]
   }
 
   dimension: region_id {

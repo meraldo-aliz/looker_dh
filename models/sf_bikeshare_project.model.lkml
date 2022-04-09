@@ -10,7 +10,15 @@ datagroup: sf_bikeshare_project_default_datagroup {
 
 persist_with: sf_bikeshare_project_default_datagroup
 
-explore: bikeshare_station_info {}
+explore: bikeshare_station_info {
+  label: "Bikeshare Station Info"
+  join: bikeshare_regions {
+    type: left_outer
+    sql_on: ${bikeshare_station_info.region_id} =  ${bikeshare_regions.region_id};;
+    relationship: many_to_one
+  }
+
+}
 
 explore: bikeshare_station_status {}
 
