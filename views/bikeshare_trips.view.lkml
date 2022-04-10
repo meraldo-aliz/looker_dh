@@ -71,10 +71,14 @@ view: bikeshare_trips {
     sql: ${TABLE}.member_birth_year ;;
   }
 
+
+
   dimension: member_gender {
     type: string
     sql: ${TABLE}.member_gender ;;
   }
+
+
 
   dimension_group: start {
     type: time

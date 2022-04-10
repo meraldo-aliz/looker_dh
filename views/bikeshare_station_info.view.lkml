@@ -71,22 +71,10 @@ view: bikeshare_station_info {
     sql: ${TABLE}.station_id ;;
   }
 
-# new
-  dimension: location {
-    type: location
-    sql_latitude:${lat} ;;
-    sql_longitude:${lon} ;;
-  }
-
   measure: count {
     type: count
     drill_fields: [name, short_name]
   }
 
-  # new
-  measure: total_capacity {
-    type: sum
-    sql: ${capacity} ;;
-  }
 
 }
