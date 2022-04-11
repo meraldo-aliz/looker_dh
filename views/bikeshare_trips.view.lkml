@@ -44,6 +44,7 @@ view: bikeshare_trips {
     sql: ${TABLE}.end_station_geom ;;
   }
 
+
   dimension: end_station_id {
     type: number
     description: "Numeric reference for end station"
@@ -75,6 +76,14 @@ dimension: member_age {
   type:  number
   sql:  EXTRACT(YEAR FROM CURRENT_DATE())-${member_birth_year} ;;
 }
+
+  dimension: member_age_tier {
+    type:  string
+    sql:  case when is_null(${member_age}) then 'Unknown' else
+    case when ${member_age}<=60 then 'Adults'
+    else 'Seniors' end end ;;
+  }
+
   dimension: member_gender {
     type: string
     sql: ${TABLE}.member_gender ;;
