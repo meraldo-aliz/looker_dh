@@ -79,7 +79,7 @@ dimension: member_age {
 
   dimension: member_age_tier {
     type:  string
-    sql:  case when ${member_age}=NULL then 'Unknown' else
+    sql:  case when ${member_age} IS NULL then 'Unknown' else
     case when ${member_age}<=60 then 'Adults'
     else 'Seniors' end end ;;
   }
