@@ -145,4 +145,28 @@ view: bikeshare_trips {
     type: count
     drill_fields: [start_station_name, end_station_name]
   }
+
+  # new
+  dimension: member_age {
+    type: number
+    sql: EXTRACT(YEAR FROM CURRENT_TIMESTAMP()) - ${member_birth_year} ;;
+  }
+
+
+  # new
+  dimension: member_age_tier {
+    case: {
+      when: {
+        sql: ${member_age} <= 60;;
+        label: "Adults"
+      }
+      when: {
+        sql: ${member_age} > 60;;
+        label: "Seniors"
+      }
+      else:"Unknown"
+    }
+    drill_fields: [member_age]
+  }
+
 }
