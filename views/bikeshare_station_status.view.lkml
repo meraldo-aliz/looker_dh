@@ -72,5 +72,11 @@ view: bikeshare_station_status {
     drill_fields: []
   }
 
+  measure: total_ebikes_available {
+    type: sum
+    sql: num_ebikes_available ;;
+
+  }
+
 
 }
