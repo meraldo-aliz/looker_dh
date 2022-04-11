@@ -81,7 +81,8 @@ dimension: member_age {
     type:  string
     sql:  case when ${member_age} IS NULL then 'Unknown' else
     case when ${member_age}<=60 then 'Adults'
-    else 'Seniors' end end ;;
+    else 'Seniors' end end;;
+    drill_fields: [member_age]
   }
 
   dimension: member_gender {
