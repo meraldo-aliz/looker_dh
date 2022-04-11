@@ -71,8 +71,10 @@ view: bikeshare_trips {
     sql: ${TABLE}.member_birth_year ;;
   }
 
-
-
+dimension: member_age {
+  type:  number
+  sql:  EXTRACT(YEAR FROM CUURENT_DATE)-${member_birth_year} ;;
+}
   dimension: member_gender {
     type: string
     sql: ${TABLE}.member_gender ;;
