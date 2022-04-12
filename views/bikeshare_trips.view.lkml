@@ -51,22 +51,6 @@ view: bikeshare_trips {
     sql: ${TABLE}.end_station_id ;;
   }
 
-  dimension: end_station_latitude {
-    type: number
-    sql: ${TABLE}.end_station_latitude ;;
-  }
-
-  dimension: end_station_longitude {
-    type: number
-    sql: ${TABLE}.end_station_longitude ;;
-  }
-
-  dimension: end_station_name {
-    type: string
-    description: "Station name for end station"
-    sql: ${TABLE}.end_station_name ;;
-  }
-
   dimension: member_birth_year {
     type: number
     sql: ${TABLE}.member_birth_year ;;
@@ -107,32 +91,12 @@ dimension: member_age {
     sql: ${TABLE}.start_date ;;
   }
 
-  dimension: start_station_geom {
-    type: string
-    sql: ${TABLE}.start_station_geom ;;
-  }
-
   dimension: start_station_id {
     type: number
     description: "Numeric reference for start station"
     sql: ${TABLE}.start_station_id ;;
   }
 
-  dimension: start_station_latitude {
-    type: number
-    sql: ${TABLE}.start_station_latitude ;;
-  }
-
-  dimension: start_station_longitude {
-    type: number
-    sql: ${TABLE}.start_station_longitude ;;
-  }
-
-  dimension: start_station_name {
-    type: string
-    description: "Station name of start station"
-    sql: ${TABLE}.start_station_name ;;
-  }
 
   dimension: subscriber_type {
     type: string
