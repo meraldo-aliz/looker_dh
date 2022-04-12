@@ -80,6 +80,7 @@ view: bikeshare_trips {
     sql: ${TABLE}.start_date ;;
   }
 
+
  dimension_group: trip_duration {
   type: time
   timeframes: [
@@ -91,7 +92,7 @@ view: bikeshare_trips {
     quarter,
     year
   ]
- sql: ${end_date}-${start_date} ;;
+ sql: ${TABLE}.end-${TABLE}.start ;;
 
  }
 
