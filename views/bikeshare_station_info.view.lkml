@@ -40,11 +40,6 @@ view: bikeshare_station_info {
     sql: ${TABLE}.lon ;;
   }
 
-  dimension: location { type: location
-    sql_latitude: $(lat);;
-    sql_longitude: $(lon);;
-    }
-
   dimension: name {
     type: string
     description: "Public name of the station"
