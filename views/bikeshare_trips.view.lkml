@@ -40,11 +40,15 @@ view: bikeshare_trips {
   }
 
 
-  dimension: member_birth_year {
+  dimension: end_station_id {
+    type: number
+    description: "Numeric reference for end station"
+    sql: ${TABLE}.end_station_id ;;
+  }
+ dimension: member_birth_year {
     type: number
     sql: ${TABLE}.member_birth_year ;;
   }
-
 
 
   dimension: member_gender {
@@ -69,18 +73,6 @@ view: bikeshare_trips {
     sql: ${TABLE}.start_date ;;
   }
 
-
-  dimension: start_station_id {
-    type: number
-    description: "Numeric reference for start station"
-    sql: ${TABLE}.start_station_id ;;
-  }
-
-  dimension: end_station_id {
-    type: number
-    description: "Numeric reference for end station"
-    sql: ${TABLE}.end_station_id ;;
-  }
 
 
   dimension: subscriber_type {
