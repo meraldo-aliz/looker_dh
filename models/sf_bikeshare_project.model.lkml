@@ -10,11 +10,13 @@ datagroup: sf_bikeshare_project_default_datagroup {
 
 persist_with: sf_bikeshare_project_default_datagroup
 
-explore: bikeshare_station_info {
-}
-
 explore: bikeshare_station_status {}
 
-explore: bikeshare_trips {}
+explore: bikeshare_station_info {}
+
 
 explore: bikeshare_regions {}
+
+
+
+explore: bikeshare_trips {}
