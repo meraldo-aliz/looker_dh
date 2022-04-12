@@ -39,32 +39,6 @@ view: bikeshare_trips {
     sql: ${TABLE}.end_date ;;
   }
 
-  dimension: end_station_geom {
-    type: string
-    sql: ${TABLE}.end_station_geom ;;
-  }
-
-  dimension: end_station_id {
-    type: number
-    description: "Numeric reference for end station"
-    sql: ${TABLE}.end_station_id ;;
-  }
-
-  dimension: end_station_latitude {
-    type: number
-    sql: ${TABLE}.end_station_latitude ;;
-  }
-
-  dimension: end_station_longitude {
-    type: number
-    sql: ${TABLE}.end_station_longitude ;;
-  }
-
-  dimension: end_station_name {
-    type: string
-    description: "Station name for end station"
-    sql: ${TABLE}.end_station_name ;;
-  }
 
   dimension: member_birth_year {
     type: number
@@ -95,10 +69,6 @@ view: bikeshare_trips {
     sql: ${TABLE}.start_date ;;
   }
 
-  dimension: start_station_geom {
-    type: string
-    sql: ${TABLE}.start_station_geom ;;
-  }
 
   dimension: start_station_id {
     type: number
@@ -106,21 +76,12 @@ view: bikeshare_trips {
     sql: ${TABLE}.start_station_id ;;
   }
 
-  dimension: start_station_latitude {
+  dimension: end_station_id {
     type: number
-    sql: ${TABLE}.start_station_latitude ;;
+    description: "Numeric reference for end station"
+    sql: ${TABLE}.end_station_id ;;
   }
 
-  dimension: start_station_longitude {
-    type: number
-    sql: ${TABLE}.start_station_longitude ;;
-  }
-
-  dimension: start_station_name {
-    type: string
-    description: "Station name of start station"
-    sql: ${TABLE}.start_station_name ;;
-  }
 
   dimension: subscriber_type {
     type: string
@@ -141,10 +102,6 @@ view: bikeshare_trips {
     sql: ${TABLE}.zip_code ;;
   }
 
-  measure: count {
-    type: count
-    drill_fields: [start_station_name, end_station_name]
-  }
 
   # new
   dimension: member_age {

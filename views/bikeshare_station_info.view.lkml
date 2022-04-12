@@ -23,13 +23,18 @@ view: bikeshare_station_info {
     sql: ${TABLE}.has_kiosk ;;
   }
 
+  # new
   dimension: lat {
+    hidden:  yes
     type: number
     description: "The latitude of station. The field value must be a valid WGS 84 latitude in decimal degrees format. See: http://en.wikipedia.org/wiki/World_Geodetic_System, https://en.wikipedia.org/wiki/Decimal_degrees"
     sql: ${TABLE}.lat ;;
   }
 
+
+  # new
   dimension: lon {
+    hidden: yes
     type: number
     description: "The longitude of station. The field value must be a valid WGS 84 longitude in decimal degrees format. See: http://en.wikipedia.org/wiki/World_Geodetic_System, https://en.wikipedia.org/wiki/Decimal_degrees"
     sql: ${TABLE}.lon ;;
@@ -59,7 +64,9 @@ view: bikeshare_station_info {
     sql: ${TABLE}.short_name ;;
   }
 
+  # new
   dimension: station_geom {
+    hidden:  yes
     type: string
     sql: ${TABLE}.station_geom ;;
   }
@@ -74,6 +81,26 @@ view: bikeshare_station_info {
   measure: count {
     type: count
     drill_fields: [name, short_name]
+  }
+
+# new
+  dimension: location {
+    type: location
+    sql_latitude:${lat} ;;
+    sql_longitude:${lon} ;;
+  }
+
+  # new
+  measure: total_capacity {
+    type: sum
+    sql: ${capacity} ;;
+  }
+
+  # new
+  measure: total_kiosk_station_capacity {
+    type: sum
+    sql: ${capacity} ;;
+    filters: [has_kiosk: "Yes"]
   }
 
 
