@@ -89,7 +89,7 @@ view: bikeshare_station_info {
   }
 
 # new
-  dimension: location {
+  dimension: loc {
     type: location
     sql_latitude:${lat} ;;
     sql_longitude:${lon} ;;
