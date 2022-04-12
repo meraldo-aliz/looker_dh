@@ -82,18 +82,10 @@ view: bikeshare_trips {
 
 
  dimension_group: trip_duration {
-  type: time
-  timeframes: [
-    raw,
-    time,
-    date,
-    week,
-    month,
-    quarter,
-    year
-  ]
- sql: ${TABLE}.end-${TABLE}.start ;;
-
+   type: duration
+  intervals: [hour,minute,second]
+  sql_start: ${TABLE}.start ;;
+  sql_end: ${TABLE}.end ;;
  }
 
 
