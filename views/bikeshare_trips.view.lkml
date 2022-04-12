@@ -45,6 +45,14 @@ view: bikeshare_trips {
     description: "Numeric reference for end station"
     sql: ${TABLE}.end_station_id ;;
   }
+
+  dimension: start_station_id {
+    type: number
+    description: "Numeric reference for start station"
+    sql: ${TABLE}.start_station_id ;;
+  }
+
+
  dimension: member_birth_year {
     type: number
     sql: ${TABLE}.member_birth_year ;;
@@ -55,7 +63,6 @@ view: bikeshare_trips {
     type: string
     sql: ${TABLE}.member_gender ;;
   }
-
 
 
   dimension_group: start {
@@ -94,28 +101,5 @@ view: bikeshare_trips {
     sql: ${TABLE}.zip_code ;;
   }
 
-
-  # new
-  dimension: member_age {
-    type: number
-    sql: EXTRACT(YEAR FROM CURRENT_TIMESTAMP()) - ${member_birth_year} ;;
-  }
-
-
-  # new
-  dimension: member_age_tier {
-    case: {
-      when: {
-        sql: ${member_age} <= 60;;
-        label: "Adults"
-      }
-      when: {
-        sql: ${member_age} > 60;;
-        label: "Seniors"
-      }
-      else:"Unknown"
-    }
-    drill_fields: [member_age]
-  }
 
 }
