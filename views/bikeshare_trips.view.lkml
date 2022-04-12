@@ -91,7 +91,7 @@ view: bikeshare_trips {
     quarter,
     year
   ]
- sql: ${end_time}-${start_time} ;;
+ sql: ${end_date}-${start_date} ;;
 
  }
 
